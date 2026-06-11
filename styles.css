@@ -407,93 +407,120 @@ img { display: block; max-width: 100%; }
 .p-mockup--alt .p-attachment { background: var(--teal-dark); }
 
 /* ─── FAMILY CONNECTED ────────────────────────────────────────── */
-.family { padding: 100px 0; background: var(--white); }
-.family__layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
+.family {
+  padding: 100px 0;
+  background: linear-gradient(180deg, var(--gray-100) 0%, var(--white) 100%);
 }
-.family__phones { display: flex; align-items: center; gap: 20px; }
-.family__arrows { display: flex; align-items: center; flex-shrink: 0; }
-.family__arrow-line { display: flex; align-items: center; gap: 0; }
-.arrow-dot { width: 10px; height: 10px; background: var(--teal); border-radius: 50%; flex-shrink: 0; }
-.arrow-line {
-  width: 32px; height: 2px;
-  background: linear-gradient(90deg, var(--teal), var(--teal-light));
-  position: relative;
-}
-.arrow-line::after {
-  content: '›';
-  position: absolute;
-  right: -6px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--teal);
-  font-size: 1.2rem;
-  line-height: 1;
-}
-.family__recipients { display: flex; flex-direction: column; gap: 16px; flex: 1; }
 
-.phone-card {
-  background: var(--offwhite);
+/* Member cards row */
+.family__members {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+.fmember {
+  background: var(--white);
   border-radius: var(--radius-lg);
-  padding: 24px 20px;
+  padding: 28px 24px;
+  box-shadow: var(--shadow-sm);
   border: 1.5px solid var(--gray-100);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   transition: transform 0.2s, box-shadow 0.2s;
 }
-.phone-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
-.phone-card--parent {
-  flex: 0 0 auto;
-  min-width: 200px;
+.fmember:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+
+.fmember--parent {
   border-color: var(--teal);
   background: var(--teal-light);
+  box-shadow: 0 0 0 3px rgba(58,158,143,0.12), var(--shadow-sm);
 }
-.phone-card--child { border-left: 3px solid #7db5a8; }
-.phone-card--grandparent { border-left: 3px solid #a8c4be; }
 
-.phone-card__icon { font-size: 1.8rem; margin-bottom: 4px; }
-.phone-card__label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal); margin-bottom: 12px; }
-.phone-card__notification {
+.fmember__top {
   display: flex;
-  align-items: flex-start;
-  gap: 8px;
+  flex-direction: column;
+  gap: 6px;
+}
+.fmember__avatar { font-size: 2.2rem; line-height: 1; }
+.fmember__role {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gray-500);
+}
+.fmember__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  width: fit-content;
+}
+.fmember__badge--sender { background: var(--teal); color: var(--white); }
+.fmember__badge--receiver { background: var(--gray-100); color: var(--gray-700); }
+
+/* Notification bubble */
+.fmember__notif {
   background: var(--white);
-  border-radius: 10px;
-  padding: 10px 12px;
-  margin-bottom: 12px;
-  box-shadow: var(--shadow-sm);
-}
-.notif__dot {
-  width: 8px; height: 8px;
-  background: var(--teal);
-  border-radius: 50%;
-  flex-shrink: 0;
-  margin-top: 4px;
-}
-.notif__text { display: flex; flex-direction: column; gap: 2px; }
-.notif__text strong { font-size: 0.75rem; color: var(--gray-900); }
-.notif__text span { font-size: 0.75rem; color: var(--gray-500); line-height: 1.4; }
-.phone-card__desc { font-size: 0.82rem; color: var(--gray-500); line-height: 1.5; }
-
-.family__features { display: flex; flex-direction: column; gap: 28px; }
-.family__feature {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-}
-.family__feature-icon {
-  font-size: 1.6rem;
-  flex-shrink: 0;
-  width: 48px; height: 48px;
-  background: var(--teal-light);
   border-radius: 12px;
+  padding: 12px 14px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-100);
+}
+.fnotif__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+.fnotif__app { font-size: 0.72rem; font-weight: 700; color: var(--teal); }
+.fnotif__time { font-size: 0.72rem; color: var(--gray-300); }
+.fnotif__msg { font-size: 0.8rem; color: var(--gray-700); line-height: 1.4; }
+
+.fmember__desc { font-size: 0.85rem; color: var(--gray-500); line-height: 1.6; }
+
+/* Connector between parent and recipients */
+.family__connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 0 4px;
+}
+.connector__line {
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(180deg, var(--teal), var(--gray-300));
+  border-radius: 2px;
+}
+.connector__icon { font-size: 1.4rem; }
+
+/* Feature pills */
+.family__perks {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.family__perk {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 8px;
+  background: var(--white);
+  border: 1.5px solid var(--gray-100);
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--gray-700);
+  box-shadow: var(--shadow-sm);
 }
-.family__feature h4 { font-size: 1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 6px; }
-.family__feature p { font-size: 0.9rem; color: var(--gray-500); line-height: 1.6; }
+.family__perk span { font-size: 1.1rem; }
 
 /* ─── GUARANTEE ───────────────────────────────────────────────── */
 .guarantee { padding: 60px 0; background: var(--teal); }
@@ -588,9 +615,9 @@ img { display: block; max-width: 100%; }
   .step__arrow { transform: rotate(90deg); }
 
   .features__grid { grid-template-columns: repeat(2, 1fr); }
-  .family__layout { grid-template-columns: 1fr; }
-  .family__phones { flex-direction: column; align-items: stretch; }
-  .family__arrows { justify-content: center; transform: rotate(90deg); margin: 4px 0; }
+  .family__members { grid-template-columns: 1fr; }
+  .family__connector { flex-direction: row; padding: 0; }
+  .connector__line { width: 40px; height: 2px; background: linear-gradient(90deg, var(--teal), var(--gray-300)); }
   .testimonials__grid { grid-template-columns: 1fr; }
   .products { grid-template-columns: 1fr; }
   .product-card--featured { transform: none; }

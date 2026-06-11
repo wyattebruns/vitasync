@@ -159,86 +159,84 @@
       <div class="section-header">
         <p class="section-eyebrow">Family Care</p>
         <h2>Keep the Whole Family<br/>on Track</h2>
-        <p class="section-sub">As a parent, you can send instant push notifications to everyone's phone — so no one in your family ever misses a dose.</p>
+        <p class="section-sub">Parents can send instant push notifications to anyone's phone — so no one in your family ever misses a dose.</p>
       </div>
-      <div class="family__layout">
-        <div class="family__phones">
-          <div class="phone-card phone-card--parent">
-            <div class="phone-card__icon">👩‍👧</div>
-            <div class="phone-card__label">Parent</div>
-            <div class="phone-card__notification">
-              <div class="notif__dot"></div>
-              <div class="notif__text">
-                <strong>VitaSync</strong>
-                <span>You sent a reminder to Emma & Grandma 💊</span>
-              </div>
-            </div>
-            <p class="phone-card__desc">You're in control. Send reminders to any family member with one tap from the VitaSync app.</p>
+
+      <!-- Member cards -->
+      <div class="family__members">
+
+        <div class="fmember fmember--parent">
+          <div class="fmember__top">
+            <div class="fmember__avatar">👩</div>
+            <div class="fmember__role">Parent</div>
+            <div class="fmember__badge fmember__badge--sender">Sends Reminders</div>
           </div>
-          <div class="family__arrows">
-            <div class="family__arrow-line">
-              <div class="arrow-dot"></div>
-              <div class="arrow-line"></div>
+          <div class="fmember__notif">
+            <div class="fnotif__header">
+              <span class="fnotif__app">VitaSync</span>
+              <span class="fnotif__time">now</span>
             </div>
+            <p class="fnotif__msg">Reminder sent to Emma &amp; Grandpa 💊</p>
           </div>
-          <div class="family__recipients">
-            <div class="phone-card phone-card--child">
-              <div class="phone-card__icon">🧒</div>
-              <div class="phone-card__label">Kid's Phone</div>
-              <div class="phone-card__notification">
-                <div class="notif__dot"></div>
-                <div class="notif__text">
-                  <strong>VitaSync</strong>
-                  <span>Mom says: time for your vitamin! 💊</span>
-                </div>
-              </div>
-              <p class="phone-card__desc">Kids get a friendly nudge directly from you — no excuses for forgetting.</p>
-            </div>
-            <div class="phone-card phone-card--grandparent">
-              <div class="phone-card__icon">👴</div>
-              <div class="phone-card__label">Grandparent's Phone</div>
-              <div class="phone-card__notification">
-                <div class="notif__dot"></div>
-                <div class="notif__text">
-                  <strong>VitaSync</strong>
-                  <span>Reminder from family: medication time 💊</span>
-                </div>
-              </div>
-              <p class="phone-card__desc">Give grandparents peace of mind — and their family peace of mind too.</p>
-            </div>
-          </div>
+          <p class="fmember__desc">You're in control. Send a reminder to any family member instantly from the VitaSync app.</p>
         </div>
-        <div class="family__features">
-          <div class="family__feature">
-            <div class="family__feature-icon">🔔</div>
-            <div>
-              <h4>Instant Push Notifications</h4>
-              <p>Send a reminder to any family member's phone in one tap — even if their VitaSync timer hasn't gone off yet.</p>
-            </div>
+
+        <div class="family__connector">
+          <div class="connector__line"></div>
+          <div class="connector__icon">📲</div>
+          <div class="connector__line"></div>
+        </div>
+
+        <div class="fmember fmember--child">
+          <div class="fmember__top">
+            <div class="fmember__avatar">🧒</div>
+            <div class="fmember__role">Kid's Phone</div>
+            <div class="fmember__badge fmember__badge--receiver">Receives Alert</div>
           </div>
-          <div class="family__feature">
-            <div class="family__feature-icon">👥</div>
-            <div>
-              <h4>Up to 6 Family Members</h4>
-              <p>Connect your whole household to one parent account. Manage everyone from a single dashboard.</p>
+          <div class="fmember__notif">
+            <div class="fnotif__header">
+              <span class="fnotif__app">VitaSync</span>
+              <span class="fnotif__time">now</span>
             </div>
+            <p class="fnotif__msg">Mom says: time for your vitamin! 💊</p>
           </div>
-          <div class="family__feature">
-            <div class="family__feature-icon">✅</div>
-            <div>
-              <h4>Confirmation Alerts</h4>
-              <p>Get notified when a family member marks their dose as taken — so you always know everyone is covered.</p>
+          <p class="fmember__desc">Kids get a friendly, personal nudge right on their phone — no more "I forgot."</p>
+        </div>
+
+        <div class="fmember fmember--grandparent">
+          <div class="fmember__top">
+            <div class="fmember__avatar">👴</div>
+            <div class="fmember__role">Grandparent's Phone</div>
+            <div class="fmember__badge fmember__badge--receiver">Receives Alert</div>
+          </div>
+          <div class="fmember__notif">
+            <div class="fnotif__header">
+              <span class="fnotif__app">VitaSync</span>
+              <span class="fnotif__time">now</span>
             </div>
+            <p class="fnotif__msg">Reminder from family: medication time 💊</p>
           </div>
-          <div class="family__feature">
-            <div class="family__feature-icon">🔒</div>
-            <div>
-              <h4>Private & Secure</h4>
-              <p>Notifications go only to family members you invite. No data shared with third parties, ever.</p>
-            </div>
-          </div>
+          <p class="fmember__desc">Help grandparents stay consistent with their medications — from anywhere.</p>
+        </div>
+
+      </div>
+
+      <!-- Feature pills -->
+      <div class="family__perks">
+        <div class="family__perk">
+          <span>🔔</span> Instant push notifications
+        </div>
+        <div class="family__perk">
+          <span>👥</span> Up to 6 family members
+        </div>
+        <div class="family__perk">
+          <span>✅</span> Dose confirmation alerts
+        </div>
+        <div class="family__perk">
+          <span>🔒</span> Private &amp; invite-only
         </div>
       </div>
+
     </div>
   </section>
 
