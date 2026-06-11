@@ -406,6 +406,95 @@ img { display: block; max-width: 100%; }
 .p-mockup--alt .p-body { background: linear-gradient(160deg, #d4dce3 0%, #b8c8d0 100%); }
 .p-mockup--alt .p-attachment { background: var(--teal-dark); }
 
+/* ─── FAMILY CONNECTED ────────────────────────────────────────── */
+.family { padding: 100px 0; background: var(--white); }
+.family__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.family__phones { display: flex; align-items: center; gap: 20px; }
+.family__arrows { display: flex; align-items: center; flex-shrink: 0; }
+.family__arrow-line { display: flex; align-items: center; gap: 0; }
+.arrow-dot { width: 10px; height: 10px; background: var(--teal); border-radius: 50%; flex-shrink: 0; }
+.arrow-line {
+  width: 32px; height: 2px;
+  background: linear-gradient(90deg, var(--teal), var(--teal-light));
+  position: relative;
+}
+.arrow-line::after {
+  content: '›';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--teal);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+.family__recipients { display: flex; flex-direction: column; gap: 16px; flex: 1; }
+
+.phone-card {
+  background: var(--offwhite);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  border: 1.5px solid var(--gray-100);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.phone-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.phone-card--parent {
+  flex: 0 0 auto;
+  min-width: 200px;
+  border-color: var(--teal);
+  background: var(--teal-light);
+}
+.phone-card--child { border-left: 3px solid #7db5a8; }
+.phone-card--grandparent { border-left: 3px solid #a8c4be; }
+
+.phone-card__icon { font-size: 1.8rem; margin-bottom: 4px; }
+.phone-card__label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal); margin-bottom: 12px; }
+.phone-card__notification {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: var(--white);
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow-sm);
+}
+.notif__dot {
+  width: 8px; height: 8px;
+  background: var(--teal);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.notif__text { display: flex; flex-direction: column; gap: 2px; }
+.notif__text strong { font-size: 0.75rem; color: var(--gray-900); }
+.notif__text span { font-size: 0.75rem; color: var(--gray-500); line-height: 1.4; }
+.phone-card__desc { font-size: 0.82rem; color: var(--gray-500); line-height: 1.5; }
+
+.family__features { display: flex; flex-direction: column; gap: 28px; }
+.family__feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.family__feature-icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  width: 48px; height: 48px;
+  background: var(--teal-light);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.family__feature h4 { font-size: 1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 6px; }
+.family__feature p { font-size: 0.9rem; color: var(--gray-500); line-height: 1.6; }
+
 /* ─── GUARANTEE ───────────────────────────────────────────────── */
 .guarantee { padding: 60px 0; background: var(--teal); }
 .guarantee__inner {
@@ -499,6 +588,9 @@ img { display: block; max-width: 100%; }
   .step__arrow { transform: rotate(90deg); }
 
   .features__grid { grid-template-columns: repeat(2, 1fr); }
+  .family__layout { grid-template-columns: 1fr; }
+  .family__phones { flex-direction: column; align-items: stretch; }
+  .family__arrows { justify-content: center; transform: rotate(90deg); margin: 4px 0; }
   .testimonials__grid { grid-template-columns: 1fr; }
   .products { grid-template-columns: 1fr; }
   .product-card--featured { transform: none; }
