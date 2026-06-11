@@ -1,3 +1,56 @@
+function openFamilyModal() {
+  document.getElementById('familyModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeFamilyModal(e) {
+  if (e && e.target !== document.getElementById('familyModal')) return;
+  document.getElementById('familyModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function addInviteRow() {
+  const container = document.getElementById('familyInvites');
+  if (container.children.length >= 5) {
+    showToast('Maximum 5 family members reached.');
+    return;
+  }
+  const row = document.createElement('div');
+  row.className = 'invite-row';
+  row.innerHTML = `
+    <input type="text" placeholder="Name" />
+    <input type="tel" placeholder="Phone number" />
+    <select>
+      <option value="">Role</option>
+      <option>Child</option>
+      <option>Grandparent</option>
+      <option>Partner</option>
+      <option>Other</option>
+    </select>
+    <button type="button" class="invite-remove" onclick="removeInvite(this)" title="Remove">&times;</button>
+  `;
+  container.appendChild(row);
+}
+
+function removeInvite(btn) {
+  const container = document.getElementById('familyInvites');
+  if (container.children.length > 1) btn.closest('.invite-row').remove();
+}
+
+function submitFamilyForm(e) {
+  e.preventDefault();
+  const form = e.target;
+  form.style.display = 'none';
+  const success = document.getElementById('familySuccess');
+  success.classList.add('show');
+  setTimeout(() => {
+    closeFamilyModal({ target: document.getElementById('familyModal') });
+    form.style.display = '';
+    success.classList.remove('show');
+    form.reset();
+  }, 3000);
+}
+
 function toggleMenu() {
   const menu = document.getElementById('mobileMenu');
   menu.classList.toggle('open');
