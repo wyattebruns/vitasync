@@ -252,46 +252,108 @@
   <div class="modal-overlay" id="familyModal" onclick="closeFamilyModal(event)">
     <div class="modal">
       <button class="modal__close" onclick="closeFamilyModal()">&times;</button>
-      <div class="modal__icon">👨‍👩‍👧</div>
-      <h2 class="modal__title">Start Your Family Group</h2>
-      <p class="modal__sub">Enter your info and invite up to 5 family members to receive reminders.</p>
 
-      <form class="family-form" onsubmit="submitFamilyForm(event)">
-        <div class="form-section-label">Your Account</div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Your Name</label>
-            <input type="text" placeholder="Jane Smith" required />
-          </div>
-          <div class="form-group">
-            <label>Your Email</label>
-            <input type="email" placeholder="jane@email.com" required />
-          </div>
-        </div>
+      <!-- Step indicator -->
+      <div class="modal__steps">
+        <div class="modal__step active" id="stepDot1"><span>1</span> Members</div>
+        <div class="modal__step-line"></div>
+        <div class="modal__step" id="stepDot2"><span>2</span> Message</div>
+      </div>
 
-        <div class="form-section-label">Invite Family Members</div>
-        <div class="family-invites" id="familyInvites">
-          <div class="invite-row">
-            <input type="text" placeholder="Name (e.g. Emma)" />
-            <input type="tel" placeholder="Phone number" />
-            <select>
-              <option value="">Role</option>
-              <option>Child</option>
-              <option>Grandparent</option>
-              <option>Partner</option>
-              <option>Other</option>
+      <!-- STEP 1: Add members -->
+      <div id="step1">
+        <div class="modal__icon">👨‍👩‍👧</div>
+        <h2 class="modal__title">Start Your Family Group</h2>
+        <p class="modal__sub">Enter your info and add the family members you want to send reminders to.</p>
+
+        <form id="step1Form" onsubmit="goToStep2(event)">
+          <div class="form-section-label">Your Account</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" id="parentName" placeholder="Jane Smith" required />
+            </div>
+            <div class="form-group">
+              <label>Your Phone</label>
+              <input type="tel" id="parentPhone" placeholder="(555) 000-0000" required />
+            </div>
+          </div>
+
+          <div class="form-section-label">Family Members</div>
+          <div class="family-invites" id="familyInvites">
+            <div class="invite-row">
+              <input type="text" placeholder="Name (e.g. Emma)" required />
+              <input type="tel" placeholder="Phone number" required />
+              <select>
+                <option value="">Role</option>
+                <option>Child</option>
+                <option>Grandparent</option>
+                <option>Partner</option>
+                <option>Other</option>
+              </select>
+              <button type="button" class="invite-remove" onclick="removeInvite(this)" title="Remove">&times;</button>
+            </div>
+          </div>
+          <button type="button" class="btn-add-member" onclick="addInviteRow()">+ Add another member</button>
+
+          <button type="submit" class="btn btn--primary btn--full modal__submit">Next — Write Your Message →</button>
+        </form>
+      </div>
+
+      <!-- STEP 2: Write & schedule message -->
+      <div id="step2" style="display:none">
+        <div class="modal__icon">💬</div>
+        <h2 class="modal__title">Write Your Reminder</h2>
+        <p class="modal__sub">Compose a message and choose when to send it. Each member will receive it on their phone.</p>
+
+        <form id="step2Form" onsubmit="submitFamilyForm(event)">
+          <div class="form-section-label">Send To</div>
+          <div class="recipient-tags" id="recipientTags"></div>
+
+          <div class="form-section-label" style="margin-top:20px">Your Message</div>
+          <div class="form-group">
+            <textarea id="reminderMessage" rows="4" placeholder="Hey! Just a reminder to take your vitamins 💊 Love you ❤️" required></textarea>
+          </div>
+          <div class="message-templates">
+            <span class="template-label">Quick templates:</span>
+            <button type="button" class="template-btn" onclick="useTemplate(this)">Time for your vitamins! 💊</button>
+            <button type="button" class="template-btn" onclick="useTemplate(this)">Don't forget your meds today 💙</button>
+            <button type="button" class="template-btn" onclick="useTemplate(this)">Drink your water &amp; take your pills! 💧</button>
+          </div>
+
+          <div class="form-section-label" style="margin-top:20px">Schedule</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Send Date</label>
+              <input type="date" id="sendDate" required />
+            </div>
+            <div class="form-group">
+              <label>Send Time</label>
+              <input type="time" id="sendTime" required />
+            </div>
+          </div>
+          <div class="form-group" style="margin-bottom:4px">
+            <label>Repeat</label>
+            <select id="repeatOption">
+              <option value="once">One time only</option>
+              <option value="daily">Every day</option>
+              <option value="weekly">Every week</option>
+              <option value="custom">Custom interval</option>
             </select>
-            <button type="button" class="invite-remove" onclick="removeInvite(this)" title="Remove">&times;</button>
           </div>
-        </div>
-        <button type="button" class="btn-add-member" onclick="addInviteRow()">+ Add another member</button>
 
-        <button type="submit" class="btn btn--primary btn--full modal__submit">Create Family Group</button>
-      </form>
+          <div class="step2-actions">
+            <button type="button" class="btn btn--ghost" onclick="backToStep1()">← Back</button>
+            <button type="submit" class="btn btn--primary">Send Reminder 🔔</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Success -->
       <div class="modal__success" id="familySuccess">
         <div class="success-check">✓</div>
-        <h3>Family Group Created!</h3>
-        <p>Invites are on their way. Family members will get a text to join VitaSync.</p>
+        <h3>Reminder Scheduled!</h3>
+        <p id="successMsg">Your family will receive the message at the scheduled time.</p>
       </div>
     </div>
   </div>
