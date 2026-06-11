@@ -274,16 +274,17 @@
               <input type="text" id="parentName" placeholder="Jane Smith" required />
             </div>
             <div class="form-group">
-              <label>Your Phone</label>
-              <input type="tel" id="parentPhone" placeholder="(555) 000-0000" required />
+              <label>Your Phone or Email <span class="label-rec">📱 Phone recommended</span></label>
+              <input type="text" id="parentPhone" placeholder="(555) 000-0000" required />
             </div>
           </div>
 
           <div class="form-section-label">Family Members</div>
+          <p class="contact-hint">📱 Phone number recommended — or use email if phone isn't available.</p>
           <div class="family-invites" id="familyInvites">
             <div class="invite-row">
               <input type="text" placeholder="Name (e.g. Emma)" required />
-              <input type="tel" placeholder="Phone number" required />
+              <input type="text" placeholder="Phone or email" required />
               <select>
                 <option value="">Role</option>
                 <option>Child</option>
@@ -304,7 +305,7 @@
       <div id="step2" style="display:none">
         <div class="modal__icon">💬</div>
         <h2 class="modal__title">Write Your Reminder</h2>
-        <p class="modal__sub">Compose a message and choose when to send it. Each member will receive it on their phone.</p>
+        <p class="modal__sub">Compose a message and choose when to send it. Members receive it by phone text or email.</p>
 
         <form id="step2Form" onsubmit="submitFamilyForm(event)">
           <div class="form-section-label">Send To</div>

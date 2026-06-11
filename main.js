@@ -25,7 +25,7 @@ function addInviteRow() {
   row.className = 'invite-row';
   row.innerHTML = `
     <input type="text" placeholder="Name" required />
-    <input type="tel" placeholder="Phone number" required />
+    <input type="text" placeholder="Phone or email" required />
     <select>
       <option value="">Role</option>
       <option>Child</option>
