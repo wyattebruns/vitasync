@@ -171,6 +171,13 @@ img { display: block; max-width: 100%; }
   color: var(--gray-900);
   margin-bottom: 20px;
 }
+.hero__slogan {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--teal);
+  font-style: italic;
+  margin-bottom: 12px;
+}
 .hero__sub {
   font-size: 1.05rem;
   color: var(--gray-500);
