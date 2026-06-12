@@ -173,10 +173,11 @@ img { display: block; max-width: 100%; }
   margin-bottom: 8px;
 }
 .hero__slogan {
-  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-size: clamp(1.6rem, 3vw, 2rem);
   font-weight: 800;
   color: var(--gray-900);
-  line-height: 1.1;
+  line-height: 1.2;
+  max-width: 320px;
   margin-bottom: 20px;
 }
 .hero__sub {
