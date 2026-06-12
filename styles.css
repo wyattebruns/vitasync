@@ -275,10 +275,10 @@ img { display: block; max-width: 100%; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
 /* ─── STATS ───────────────────────────────────────────────────── */
-.stats { padding: 100px 0; background: var(--gray-900); }
-.stats .section-eyebrow { color: #7aabf0; }
-.stats .section-header h2 { color: var(--white); }
-.stats .section-sub { color: rgba(255,255,255,0.5); }
+.stats { padding: 100px 0; background: var(--gray-100); }
+.stats .section-eyebrow { color: var(--teal); }
+.stats .section-header h2 { color: var(--gray-900); }
+.stats .section-sub { color: var(--gray-500); }
 
 .stats__grid {
   display: grid;
@@ -288,18 +288,19 @@ img { display: block; max-width: 100%; }
 }
 
 .stat-card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--white);
+  border: 1.5px solid var(--teal);
   border-radius: var(--radius-lg);
   padding: 36px 28px;
   text-align: center;
+  box-shadow: var(--shadow-sm);
   transition: transform 0.2s, box-shadow 0.2s;
 }
-.stat-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.3); }
+.stat-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
 .stat-card--featured {
   background: var(--teal);
   border-color: var(--teal);
-  box-shadow: 0 8px 32px rgba(58,127,212,0.4);
+  box-shadow: 0 8px 32px rgba(58,127,212,0.25);
 }
 
 /* Donut chart */
@@ -316,10 +317,10 @@ img { display: block; max-width: 100%; }
 }
 .donut-bg {
   fill: none;
-  stroke: rgba(255,255,255,0.1);
+  stroke: var(--gray-100);
   stroke-width: 10;
 }
-.stat-card--featured .donut-bg { stroke: rgba(255,255,255,0.2); }
+.stat-card--featured .donut-bg { stroke: rgba(255,255,255,0.25); }
 .donut-fill {
   fill: none;
   stroke: var(--teal);
@@ -344,12 +345,13 @@ img { display: block; max-width: 100%; }
 .stat-card h3 {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--white);
+  color: var(--gray-900);
   margin-bottom: 10px;
 }
+.stat-card--featured h3 { color: var(--white); }
 .stat-card p {
   font-size: 0.88rem;
-  color: rgba(255,255,255,0.6);
+  color: var(--gray-500);
   line-height: 1.6;
 }
 .stat-card--featured p { color: rgba(255,255,255,0.85); }
@@ -357,7 +359,7 @@ img { display: block; max-width: 100%; }
 .stats__source {
   text-align: center;
   font-size: 0.78rem;
-  color: rgba(255,255,255,0.25);
+  color: var(--gray-300);
 }
 
 /* ─── HOW IT WORKS ────────────────────────────────────────────── */
