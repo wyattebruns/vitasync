@@ -115,6 +115,14 @@ function submitFamilyForm(e) {
   }, 3500);
 }
 
+// ── FAQ ───────────────────────────────────────────────────────
+
+function toggleFaq(item) {
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq__item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
 // ── Nav ───────────────────────────────────────────────────────
 
 function toggleMenu() {
