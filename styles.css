@@ -172,10 +172,11 @@ img { display: block; max-width: 100%; }
   margin-bottom: 8px;
 }
 .hero__slogan {
-  font-size: 1rem;
+  font-size: 0.85rem;
   font-weight: 400;
   color: var(--teal);
   font-style: italic;
+  line-height: 1.6;
   margin-bottom: 20px;
 }
 .hero__sub {
