@@ -203,6 +203,30 @@ img { display: block; max-width: 100%; }
 }
 .trust-icon { color: var(--teal); font-weight: 700; }
 
+/* ─── Real Product Image ──────────────────────────────────────── */
+.hero__bottle-img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));
+}
+.product-card__image {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 8px;
+  padding: 12px 0;
+  min-height: 120px;
+}
+.product-card__img {
+  height: 110px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
+}
+
 /* ─── Product Mockup (CSS illustration) ──────────────────────── */
 .hero__visual { display: flex; justify-content: center; align-items: center; }
 .product-mockup { position: relative; width: 260px; height: 420px; }
