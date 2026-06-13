@@ -499,68 +499,40 @@ img { display: block; max-width: 100%; }
 
 /* ─── CONSTRUCTION ────────────────────────────────────────────── */
 .construction {
-  background: repeating-linear-gradient(
-    -45deg,
-    #f4b942 0px, #f4b942 40px,
-    #1a2238 40px, #1a2238 80px
-  );
-  padding: 0;
-  overflow: hidden;
+  background: var(--offwhite);
+  border-top: 3px dashed #f4b942;
+  border-bottom: 3px dashed #f4b942;
+  padding: 80px 0;
 }
-.construction__tape {
-  background: #f4b942;
-  overflow: hidden;
-  padding: 10px 0;
-}
-.construction__tape-inner {
-  display: flex;
-  gap: 40px;
-  white-space: nowrap;
-  animation: tapeScroll 12s linear infinite;
-  width: max-content;
-}
-.construction__tape--bottom .construction__tape-inner { animation-direction: reverse; }
-.construction__tape span {
-  font-size: 0.85rem;
-  font-weight: 800;
-  color: #1a2238;
-  letter-spacing: 0.1em;
+.construction__body { text-align: center; }
+.construction__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff8e1;
+  border: 1.5px solid #f4b942;
+  color: #a07800;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 50px;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
+  margin-bottom: 20px;
 }
-@keyframes tapeScroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-.construction__body {
-  text-align: center;
-  padding: 80px 24px;
-  background: rgba(26,34,56,0.9);
-}
-.construction__icon { font-size: 4rem; margin-bottom: 20px; }
+.construction__icon { font-size: 3rem; margin-bottom: 16px; }
 .construction__title {
-  font-size: clamp(1.8rem, 4vw, 2.4rem);
-  font-weight: 800;
-  color: #f4b942;
-  margin-bottom: 16px;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 14px;
 }
 .construction__sub {
   font-size: 1rem;
-  color: rgba(255,255,255,0.75);
-  max-width: 500px;
-  margin: 0 auto 40px;
+  color: var(--gray-500);
+  max-width: 480px;
+  margin: 0 auto;
   line-height: 1.7;
-}
-.construction__barriers { display: flex; justify-content: center; gap: 20px; }
-.barrier {
-  width: 60px;
-  height: 90px;
-  border-radius: 6px;
-  background: repeating-linear-gradient(
-    180deg,
-    #f4b942 0px, #f4b942 15px,
-    #1a2238 15px, #1a2238 30px
-  );
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
 /* ─── FAMILY CONNECTED ────────────────────────────────────────── */
