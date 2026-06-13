@@ -205,11 +205,10 @@ img { display: block; max-width: 100%; }
 
 /* ─── Real Product Image ──────────────────────────────────────── */
 .hero__bottle-img {
-  width: 100%;
-  max-width: 320px;
+  width: 48%;
+  max-width: 360px;
   height: auto;
   display: block;
-  margin: 0 auto;
   filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));
 }
 .product-card__image {
@@ -218,17 +217,17 @@ img { display: block; max-width: 100%; }
   align-items: flex-end;
   gap: 8px;
   padding: 12px 0;
-  min-height: 120px;
+  min-height: 160px;
 }
 .product-card__img {
-  height: 110px;
+  height: 150px;
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
 }
 
 /* ─── Product Mockup (CSS illustration) ──────────────────────── */
-.hero__visual { display: flex; justify-content: center; align-items: center; }
+.hero__visual { display: flex; justify-content: center; align-items: flex-end; gap: 20px; }
 .product-mockup { position: relative; width: 260px; height: 420px; }
 .mockup__bottle { position: relative; display: flex; flex-direction: column; align-items: center; width: 100%; height: 100%; }
 .mockup__cap {
