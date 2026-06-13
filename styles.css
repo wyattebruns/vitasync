@@ -220,8 +220,9 @@ img { display: block; max-width: 100%; }
   min-height: 160px;
 }
 .product-card__img {
-  height: 150px;
+  height: 120px;
   width: auto;
+  max-width: 80px;
   object-fit: contain;
   filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
 }
