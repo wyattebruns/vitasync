@@ -217,12 +217,12 @@ img { display: block; max-width: 100%; }
   align-items: flex-end;
   gap: 8px;
   padding: 12px 0;
-  min-height: 160px;
+  min-height: 200px;
 }
 .product-card__img {
-  height: 100px;
+  height: 160px;
   width: auto;
-  max-width: 90px;
+  max-width: 130px;
   object-fit: contain;
   filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
   flex-shrink: 0;
