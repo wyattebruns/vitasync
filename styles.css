@@ -205,8 +205,8 @@ img { display: block; max-width: 100%; }
 
 /* ─── Real Product Image ──────────────────────────────────────── */
 .hero__bottle-img {
-  width: 48%;
-  max-width: 360px;
+  width: 100%;
+  max-width: 520px;
   height: auto;
   display: block;
   filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));
