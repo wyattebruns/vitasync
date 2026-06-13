@@ -220,11 +220,12 @@ img { display: block; max-width: 100%; }
   min-height: 160px;
 }
 .product-card__img {
-  height: 120px;
+  height: 100px;
   width: auto;
-  max-width: 80px;
+  max-width: 90px;
   object-fit: contain;
   filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
+  flex-shrink: 0;
 }
 
 /* ─── Product Mockup (CSS illustration) ──────────────────────── */
