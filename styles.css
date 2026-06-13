@@ -497,6 +497,71 @@ img { display: block; max-width: 100%; }
 .p-mockup--alt .p-body { background: linear-gradient(160deg, #d4dce3 0%, #b8c8d0 100%); }
 .p-mockup--alt .p-attachment { background: var(--teal-dark); }
 
+/* ─── BLUETOOTH ───────────────────────────────────────────────── */
+.bluetooth { padding: 100px 0; background: var(--white); }
+
+.bt-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+}
+
+.bt-device {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.bt-icon {
+  width: 100px;
+  height: 100px;
+  background: var(--teal);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 2;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(58,127,212,0.4);
+}
+.bt-icon svg { width: 52px; height: 52px; }
+
+.bt-waves {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bt-wave {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid var(--teal);
+  opacity: 0;
+  animation: btPulse 2.4s ease-out infinite;
+}
+.bt-wave--1 { width: 140px; height: 140px; animation-delay: 0s; }
+.bt-wave--2 { width: 200px; height: 200px; animation-delay: 0.6s; }
+.bt-wave--3 { width: 280px; height: 280px; animation-delay: 1.2s; }
+
+@keyframes btPulse {
+  0%   { opacity: 0.6; transform: scale(0.8); }
+  100% { opacity: 0;   transform: scale(1.1); }
+}
+
+.bt-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--teal);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+
 /* ─── FAMILY CONNECTED ────────────────────────────────────────── */
 .family {
   padding: 100px 0;
