@@ -500,9 +500,23 @@ img { display: block; max-width: 100%; }
 /* ─── CONSTRUCTION ────────────────────────────────────────────── */
 .construction {
   background: var(--offwhite);
-  border-top: 3px dashed #f4b942;
-  border-bottom: 3px dashed #f4b942;
+  border-top: 4px solid #f4b942;
+  border-bottom: 4px solid #f4b942;
   padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+.construction::before {
+  content: '🚧  🚧  🚧  🚧  🚧  🚧  🚧  🚧  🚧  🚧  🚧  🚧  🚧  🚧  🚧  🚧';
+  position: absolute;
+  top: 6px;
+  left: 0;
+  right: 0;
+  font-size: 0.7rem;
+  letter-spacing: 0.5em;
+  color: #f4b942;
+  text-align: center;
+  opacity: 0.6;
 }
 .construction__body { text-align: center; }
 .construction__badge {
