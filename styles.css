@@ -497,107 +497,70 @@ img { display: block; max-width: 100%; }
 .p-mockup--alt .p-body { background: linear-gradient(160deg, #d4dce3 0%, #b8c8d0 100%); }
 .p-mockup--alt .p-attachment { background: var(--teal-dark); }
 
-/* ─── BLUETOOTH ───────────────────────────────────────────────── */
-.bluetooth { padding: 100px 0; background: var(--white); opacity: 0.75; }
-.under-construction {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #fff8e1;
-  border: 1.5px solid #f4b942;
-  color: #a07800;
+/* ─── CONSTRUCTION ────────────────────────────────────────────── */
+.construction {
+  background: repeating-linear-gradient(
+    -45deg,
+    #f4b942 0px, #f4b942 40px,
+    #1a2238 40px, #1a2238 80px
+  );
+  padding: 0;
+  overflow: hidden;
+}
+.construction__tape {
+  background: #f4b942;
+  overflow: hidden;
+  padding: 10px 0;
+}
+.construction__tape-inner {
+  display: flex;
+  gap: 40px;
+  white-space: nowrap;
+  animation: tapeScroll 12s linear infinite;
+  width: max-content;
+}
+.construction__tape--bottom .construction__tape-inner { animation-direction: reverse; }
+.construction__tape span {
   font-size: 0.85rem;
-  font-weight: 600;
-  padding: 8px 18px;
-  border-radius: 50px;
+  font-weight: 800;
+  color: #1a2238;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+@keyframes tapeScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.construction__body {
+  text-align: center;
+  padding: 80px 24px;
+  background: rgba(26,34,56,0.9);
+}
+.construction__icon { font-size: 4rem; margin-bottom: 20px; }
+.construction__title {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 800;
+  color: #f4b942;
   margin-bottom: 16px;
 }
-
-.bt-visual {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 60px 0;
+.construction__sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.75);
+  max-width: 500px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
 }
-
-.bt-device {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-}
-
-.bt-icon {
-  width: 100px;
-  height: 100px;
-  background: var(--teal);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  z-index: 2;
-  position: relative;
-  box-shadow: 0 8px 32px rgba(58,127,212,0.4);
-}
-.bt-icon svg { width: 52px; height: 52px; }
-
-.bt-waves {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.bt-wave {
-  position: absolute;
-  border-radius: 50%;
-  border: 2px solid var(--teal);
-  opacity: 0;
-  animation: btPulse 2.4s ease-out infinite;
-}
-.bt-wave--1 { width: 140px; height: 140px; animation-delay: 0s; }
-.bt-wave--2 { width: 200px; height: 200px; animation-delay: 0.6s; }
-.bt-wave--3 { width: 280px; height: 280px; animation-delay: 1.2s; }
-
-@keyframes btPulse {
-  0%   { opacity: 0.6; transform: scale(0.8); }
-  100% { opacity: 0;   transform: scale(1.1); }
-}
-
-.bt-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-}
-.bt-features { display: flex; flex-direction: column; gap: 28px; }
-.bt-feature {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-}
-.bt-feature__icon {
-  font-size: 1.4rem;
-  flex-shrink: 0;
-  width: 48px; height: 48px;
-  background: var(--teal-light);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.bt-feature h4 { font-size: 1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 6px; }
-.bt-feature p { font-size: 0.9rem; color: var(--gray-500); line-height: 1.6; }
-
-.bt-label {
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--teal);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-top: 8px;
+.construction__barriers { display: flex; justify-content: center; gap: 20px; }
+.barrier {
+  width: 60px;
+  height: 90px;
+  border-radius: 6px;
+  background: repeating-linear-gradient(
+    180deg,
+    #f4b942 0px, #f4b942 15px,
+    #1a2238 15px, #1a2238 30px
+  );
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
 /* ─── FAMILY CONNECTED ────────────────────────────────────────── */
