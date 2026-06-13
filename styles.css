@@ -498,7 +498,20 @@ img { display: block; max-width: 100%; }
 .p-mockup--alt .p-attachment { background: var(--teal-dark); }
 
 /* ─── BLUETOOTH ───────────────────────────────────────────────── */
-.bluetooth { padding: 100px 0; background: var(--white); }
+.bluetooth { padding: 100px 0; background: var(--white); opacity: 0.75; }
+.under-construction {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff8e1;
+  border: 1.5px solid #f4b942;
+  color: #a07800;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 50px;
+  margin-bottom: 16px;
+}
 
 .bt-visual {
   display: flex;
